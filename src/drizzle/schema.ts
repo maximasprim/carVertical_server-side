@@ -122,6 +122,13 @@ import {
     transactions: many(transactionsTable),
     authentications: many(authenticationTable),
   }));
+
+  export const vehiclesImagesRelations = relations(vehicleImagesTable, ({ one }) => ({
+    vehicle: one(vehiclesTable, {
+      fields: [vehicleImagesTable.vehicle_id],
+      references: [vehiclesTable.vehicle_id],
+    }),
+  }));
   
   export const vehicleRelations = relations(vehiclesTable, ({ many, one }) => ({
     images: many(vehicleImagesTable),
@@ -135,6 +142,13 @@ import {
     favorites: many(favoritesTable),
     history: many(vehicleHistoryTable),
   }));
+
+  export const vehicleHistoryRelations = relations(vehicleHistoryTable, ({ one }) => ({
+    vehicle: one(vehiclesTable, {
+      fields: [vehicleHistoryTable.vehicle_id],
+      references: [vehiclesTable.vehicle_id],
+    }),
+  }));
   
   export const authenticationRelations = relations(authenticationTable, ({ one }) => ({
     user: one(usersTable, {
@@ -142,6 +156,13 @@ import {
       references: [usersTable.user_id],
     }),
   }));
+
+  export const vehicleStatusRelations = relations(vehicleStatusTable, ({ one }) => ({
+    vehicle: one(vehiclesTable, {
+      fields: [vehicleStatusTable.vehicle_id],
+      references: [vehiclesTable.vehicle_id],
+    }),
+  }));  
   
   export const transactionsRelations = relations(transactionsTable, ({ one }) => ({
     vehicle: one(vehiclesTable, {
@@ -161,6 +182,13 @@ import {
     }),
     vehicle: one(vehiclesTable, {
       fields: [reviewsTable.vehicle_id],
+      references: [vehiclesTable.vehicle_id],
+    }),
+  }));
+
+  export const vehicleDetailsRelations = relations(vehicleDetailsTable, ({ one }) => ({
+    vehicle: one(vehiclesTable, {
+      fields: [vehicleDetailsTable.vehicle_id],
       references: [vehiclesTable.vehicle_id],
     }),
   }));
