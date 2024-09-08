@@ -9,10 +9,21 @@ POST http://localhost:3000/users
 
  {
     
-    "full_name": "Jane ",
-    "email": "jane@gmail.com",
+    "full_name": "ann ",
+    "email": "ann@gmail.com",
     "password": "123456",
     "role": "admin"
     
 
  }
+###
+PUT http://localhost:3000/users/8
+ Content-Type: application/json
+
+ {
+        
+    "email": "annie@gmail.Com"
+ }
+
+###
+DELETE http://localhost:3000/users/8

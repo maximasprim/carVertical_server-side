@@ -39,14 +39,14 @@ export const createuser = async (c: Context) => {
 
 export const updateUser = async (c: Context) => {
     const id = parseInt(c.req.param("id"));
-    if (isNaN(id)){
+    if (isNaN(id))
         return c.text("Invalid user id",400);
 
         const user = await c.req.json();
         try {
             //search for the user
             const searcheduser = await getUserService(id);
-            if ( searcheduser == undefined){
+            if ( searcheduser == undefined)
                 return c.text("User not found",404);
                 //get the data and update
             const res = await updateUserService(id,user);
@@ -54,12 +54,12 @@ export const updateUser = async (c: Context) => {
             if (!res)
                 return c.text("User not updated",404);
                 return c.json({msg: res},200);
-            }
+            
         }
         catch (error: any){
             return c.json({msg: error.message},400);
         }
-    }
+    
 }
 
 export const deleteUser = async (c: Context) => {

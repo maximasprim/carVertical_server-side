@@ -22,7 +22,7 @@ export const createUserService = async(user: TIUsers)=> {
 
 export const updateUserService = async(id: number, user: TIUsers) => {
     await db.update(usersTable).set(user).where(eq(usersTable.user_id, id))
-    return "uses updated successfully";
+    return "user updated successfully";
 }
 
 export const deleteUserService = async(id: number)=> {
