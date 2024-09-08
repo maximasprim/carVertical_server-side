@@ -11,6 +11,9 @@ importers:
       '@hono/node-server':
         specifier: ^1.12.0
         version: 1.12.0
+      '@hono/zod-validator':
+        specifier: ^0.2.2
+        version: 0.2.2(hono@4.5.5)(zod@3.23.8)
       '@neondatabase/serverless':
         specifier: ^0.9.4
         version: 0.9.4
@@ -32,6 +35,9 @@ importers:
       pg:
         specifier: ^8.12.0
         version: 8.12.0
+      zod:
+        specifier: ^3.23.8
+        version: 3.23.8
     devDependencies:
       '@types/node':
         specifier: ^20.11.17
@@ -469,6 +475,12 @@ packages:
     resolution: {integrity: sha512-e6oHjNiErRxsZRZBmc2KucuvY3btlO/XPncIpP2X75bRdTilF9GLjm3NHvKKunpJbbJJj31/FoPTksTf8djAVw==}
     engines: {node: '>=18.14.1'}
 
+  '@hono/zod-validator@0.2.2':
+    resolution: {integrity: sha512-dSDxaPV70Py8wuIU2QNpoVEIOSzSXZ/6/B/h4xA7eOMz7+AarKTSGV8E6QwrdcCbBLkpqfJ4Q2TmBO0eP1tCBQ==}
+    peerDependencies:
+      hono: '>=3.9.0'
+      zod: ^3.19.1
+
   '@neondatabase/serverless@0.9.4':
     resolution: {integrity: sha512-D0AXgJh6xkf+XTlsO7iwE2Q1w8981E1cLCPAALMU2YKtkF/1SF6BiAzYARZFYo175ON+b1RNIy9TdSFHm5nteg==}
 
@@ -728,6 +740,9 @@ packages:
     resolution: {integrity: sha512-LKYU1iAXJXUgAXn9URjiu+MWhyUXHsvfp7mcuYm9dSUKK0/CjtrUwFAxD82/mCWbtLsGjFIad0wIsod4zrTAEQ==}
     engines: {node: '>=0.4'}
 
+  zod@3.23.8:
+    resolution: {integrity: sha512-XBx9AXhXktjUqnepgTiE5flcKIYWi/rme0Eaj+5Y0lftuGBq+jyRu/md4WnuxqgP1ubdpNCsYEYPxrzVHD8d6g==}
+
 snapshots:
 
   '@drizzle-team/brocli@0.8.2': {}
@@ -950,6 +965,11 @@ snapshots:
     optional: true
 
   '@hono/node-server@1.12.0': {}
+
+  '@hono/zod-validator@0.2.2(hono@4.5.5)(zod@3.23.8)':
+    dependencies:
+      hono: 4.5.5
+      zod: 3.23.8
 
   '@neondatabase/serverless@0.9.4':
     dependencies:
@@ -1176,3 +1196,5 @@ snapshots:
   undici-types@5.26.5: {}
 
   xtend@4.0.2: {}
+
+  zod@3.23.8: {}
