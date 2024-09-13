@@ -1,4 +1,5 @@
 GET http://localhost:3000
+//users queries
 ###
 GET http://localhost:3000/users
 ###
@@ -17,7 +18,7 @@ POST http://localhost:3000/users
 
  }
 ###
-PUT http://localhost:3000/users/8
+PUT http://localhost:3000/users/9
  Content-Type: application/json
 
  {
@@ -27,3 +28,84 @@ PUT http://localhost:3000/users/8
 
 ###
 DELETE http://localhost:3000/users/8
+
+//vehicles queries
+
+###
+GET http://localhost:3000/vehicles
+###
+GET http://localhost:3000/vehicles/1
+###
+POST http://localhost:3000/vehicles
+ Content-Type: application/json
+
+  {
+ "make":"toyota",
+ "model":"premio",
+ "year":"2012",
+ "vin":"123455",
+ "status":"available",
+ "price":"2000000"
+  }
+###
+PUT http://localhost:3000/vehicles/1
+ Content-Type: application/json
+
+ {
+   "year":"2017"
+ }
+
+###
+DELETE http://localhost:3000/vehicles/1
+
+//vehiles Status queries
+###
+GET http://localhost:3000/vehicleStatus
+###
+GET http://localhost:3000/vehicleStatus/1
+###
+POST http://localhost:3000/vehicleStatus
+ Content-Type: application/json
+
+ {
+   "vehicle_id":"6",
+   "status":"available",
+   "description":"available"
+ }
+
+###
+PUT http://localhost:3000/vehicleStatus/3
+ Content-Type: application/json
+
+ {
+   "status":"available"
+ }
+###
+DELETE http://localhost:3000/vehicleStatus/9
+
+//transactions queries
+###
+GET http://localhost:3000/transactions
+###
+GET http://localhost:3000/transactions/1
+###
+POST http://localhost:3000/transactions
+ Content-Type: application/json
+
+ {
+  "vehicle_id":"6",
+  "buyer_id":"1",
+  "sale_price":"2000000",
+  "status":"sold"
+ }
+
+###
+PUT http://localhost:3000/transactions/1
+ Content-Type: application/json
+
+ {
+  "status":"sold"
+ }
+
+###
+DELETE http://localhost:3000/transactions/1
